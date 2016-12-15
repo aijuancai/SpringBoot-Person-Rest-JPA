@@ -28,6 +28,15 @@ public class PersonJsonTest {
        // assertThat(this.json.write(p)).isEqualToJson("jsonFiles/person.json");
         assertThat(this.json.write(p)).hasJsonPathStringValue("@.firstName");
         assertThat(this.json.write(p)).extractingJsonPathStringValue("@.firstName").isEqualTo("Alex");
+    }
 
+    @Test
+    public void testDeserializeJson() throws Exception {
+        String content = "{\"firstName\":\"Alex\",\"lastName\":\"Johnson\"}";
+        Person p = new Person();
+        p.setFirstName("Alex");
+        p.setLastName("Johnson");
+        //assertThat(this.json.parse(content)).isEqualTo(p);
+        assertThat(this.json.parseObject(content).getFirstName()).isEqualTo("Alex");
     }
 }
