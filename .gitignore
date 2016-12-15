@@ -1,0 +1,14 @@
+.settings/
+/.classpath
+/.project
+target/
+/bin/
+*.iml
+*.iws
+*.ipr
+.idea/
+*.prefs
+/.DS_Store
+predix-out-*
+predix-run-*
+/generated
